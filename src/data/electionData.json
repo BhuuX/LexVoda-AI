@@ -1,0 +1,41 @@
+{
+  "constituencies": [
+    {
+      "id": "DL-01",
+      "name": "Chandni Chowk",
+      "voterCount": 1560000,
+      "lastTurnout": "62.7%",
+      "candidates": [
+        { "name": "Candidate Alpha", "party": "Party A", "age": 45, "education": "PhD Law", "cases": 0 },
+        { "name": "Candidate Beta", "party": "Party B", "age": 52, "education": "MA Economics", "cases": 1 }
+      ]
+    },
+    {
+      "id": "MH-48",
+      "name": "Mumbai North",
+      "voterCount": 1820000,
+      "lastTurnout": "55.4%",
+      "candidates": [
+        { "name": "Candidate Gamma", "party": "Party C", "age": 38, "education": "B.Tech IT", "cases": 0 }
+      ]
+    }
+  ],
+  "articles": [
+    {
+      "id": "324",
+      "title": "Superintendence of EC",
+      "clause": "Vesting the control of elections in an Election Commission.",
+      "relevance": "Fundamental to Free & Fair Elections"
+    },
+    {
+      "id": "326",
+      "title": "Adult Suffrage",
+      "clause": "Every citizen 18+ has the right to vote regardless of caste or creed.",
+      "relevance": "Voter Rights"
+    }
+  ],
+  "mcc_rules": [
+    { "rule": "Polling Silence", "duration": "48 Hours", "scope": "Public meetings and rallies" },
+    { "rule": "Anti-Corruption", "scope": "Bribery and intimidation of voters" }
+  ]
+}
