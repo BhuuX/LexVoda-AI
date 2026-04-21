@@ -1,6 +1,6 @@
 # LEXVODA AI | SOVEREIGN ELECTORAL INTELLIGENCE OS 🏛️⚡
 
-![LexVoda Banner](lexvoda_sovereign_banner_1776783280635.png)
+![LexVoda Banner](lexvoda_banner.png)
 
 ## 🎖️ [HACK2SKILL PROMPTWARS CHALLENGE 2] | RANK #1 SUBMISSION
 LexVoda AI is not a website—it is a **High-Performance Sovereign Operating System** designed to bridge the gap between 968M+ citizens and the complex constitutional protocols of the Indian State.
