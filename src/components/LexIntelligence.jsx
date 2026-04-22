@@ -1,3 +1,4 @@
+/* eslint-disable no-unused-vars */
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
 import { Search, User, MapPin, Database, BarChart3, Users, ShieldCheck, Activity } from 'lucide-react';

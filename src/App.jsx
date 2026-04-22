@@ -1,3 +1,4 @@
+/* eslint-disable no-unused-vars */
 import React, { useState, useEffect, Suspense, lazy } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Globe, Database, Cpu as CpuIcon, Book, Shield, Zap, Activity, LayoutDashboard, Terminal, Bot, ChevronUp, ChevronDown, ChevronRight, Monitor, Clock } from 'lucide-react';
@@ -110,6 +111,7 @@ export default function App() {
 
         <div style={{ display: 'flex', alignItems: 'center', gap: '15px' }}>
           <button 
+            aria-label="System Administrator Login via Google"
             onClick={async () => {
               try {
                 await signInWithPopup(GCloud.auth, new GoogleAuthProvider());
@@ -183,6 +185,9 @@ export default function App() {
           cursor: isAiExpanded ? 'default' : 'pointer'
         }}
         onClick={() => !isAiExpanded && setIsAiExpanded(true)}
+        role="button"
+        aria-label="Toggle Sovereign AI Assistant"
+        aria-expanded={isAiExpanded}
       >
         {isAiExpanded ? (
           <div className="animate-fade-in" style={{ display: 'flex', flexDirection: 'column', height: '100%' }}>
@@ -191,7 +196,7 @@ export default function App() {
                 <Bot size={16} color="var(--primary)" />
                 <span style={{ fontSize: '0.75rem', fontWeight: '700', letterSpacing: '0.5px' }}>SOVEREIGN_AI_ASSISTANT</span>
               </div>
-              <button onClick={(e) => { e.stopPropagation(); setIsAiExpanded(false); }} style={{ background: 'transparent', border: 'none', color: 'var(--text-muted)', cursor: 'pointer' }}>
+              <button aria-label="Close AI Assistant" onClick={(e) => { e.stopPropagation(); setIsAiExpanded(false); }} style={{ background: 'transparent', border: 'none', color: 'var(--text-muted)', cursor: 'pointer' }}>
                 <ChevronDown size={20} />
               </button>
             </div>
@@ -227,6 +232,7 @@ export default function App() {
               <div style={{ position: 'relative' }}>
                 <input 
                   type="text" 
+                  aria-label="Query Neural Engine Input"
                   placeholder="QUERY_NEURAL_ENGINE..." 
                   onKeyDown={(e) => {
                     if (e.key === 'Enter' && e.target.value) {

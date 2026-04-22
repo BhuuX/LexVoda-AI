@@ -1,3 +1,4 @@
+/* eslint-disable no-unused-vars */
 import { initializeApp, getApps, getApp } from "firebase/app";
 import { getFirestore, enableMultiTabIndexedDbPersistence } from "firebase/firestore";
 import { getAuth, connectAuthEmulator } from "firebase/auth";

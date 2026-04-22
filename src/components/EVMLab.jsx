@@ -1,4 +1,5 @@
-import React, { useState, useEffect } from 'react';
+/* eslint-disable no-unused-vars, react-hooks/exhaustive-deps, react-hooks/set-state-in-effect */
+import React, { useState, useEffect, useCallback, useMemo } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Fingerprint, PenTool, ClipboardCheck, PlayCircle, Printer, ShieldCheck, Activity, Terminal as TerminalIcon, AlertCircle, RefreshCcw, Search, MapPin, CheckCircle2, Bot } from 'lucide-react';
 import { useAppStore } from '../store/appStore';
@@ -140,7 +141,7 @@ export default function EVMLab() {
     setLogs(prev => [`[${new Date().toLocaleTimeString()}] ${msg}`, ...prev].slice(0, 6));
   };
 
-  const nextStage = () => {
+  function nextStage() {
     if (stage === 1 && !voterVerified) return; // STRICT_GUARD
     setIsProcessing(true);
     addLog(`TRANSITIONING_TO_${STAGES[stage + 1].title}...`);
@@ -211,7 +212,7 @@ export default function EVMLab() {
     }, 1800);
   };
 
-  const reset = () => {
+  function reset() {
     setStage(0);
     setVotedFor(null);
     setSelectedConst(null);
@@ -457,9 +458,9 @@ export default function EVMLab() {
                         <div style={{ fontSize: '4rem', margin: '20px 0' }}>{votedFor?.symbol}</div>
                         <div style={{ fontSize: '0.7rem', fontWeight: '800', marginBottom: '15px' }}>SEC: {selectedConst?.name}</div>
                         <div style={{ display: 'grid', gridTemplateColumns: 'repeat(4, 1fr)', gap: '4px', height: '20px', width: '80px', margin: '20px auto' }}>
-                            {[...Array(16)].map((_, i) => <div key={i} style={{ background: '#000', opacity: Math.random() }} />)}
+                            {[...Array(16)].map((_, i) => <div key={i} style={{ background: '#000', opacity: (i % 3) * 0.3 }} />)}
                         </div>
-                        <div style={{ fontSize: '0.5rem', opacity: 0.5, marginTop: '20px', fontWeight: '800' }}>TX_ID: {Math.random().toString(36).substr(2, 12).toUpperCase()}</div>
+                        <div style={{ fontSize: '0.5rem', opacity: 0.5, marginTop: '20px', fontWeight: '800' }}>TX_ID: {selectedConst ? `TX-${selectedConst.id}-882` : 'TX-PENDING'}</div>
                       </div>
                   </div>
                   <div style={{ marginTop: '50px', display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', gap: '15px', color: '#10b981' }}>

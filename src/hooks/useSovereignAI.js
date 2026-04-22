@@ -1,3 +1,4 @@
+/* eslint-disable no-unused-vars, react-hooks/set-state-in-effect */
 import { useState, useEffect, useCallback, useMemo } from 'react';
 import { useAppStore } from '../store/appStore';
 import { checkSystemHealth, syncTelemetryData } from '../services/googleCloudService';

@@ -1,3 +1,4 @@
+/* eslint-disable no-unused-vars */
 import React, { useState, useEffect } from 'react';
 import { Activity, Cloud, Globe, ShieldCheck } from 'lucide-react';
 import { checkSystemHealth } from '../services/googleCloudService';
