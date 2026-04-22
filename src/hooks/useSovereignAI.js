@@ -4,10 +4,10 @@ import { checkSystemHealth, syncTelemetryData } from '../services/googleCloudSer
 
 const AI_DATABASE = {
   PROCESS: [
-    { keywords: ["step", "how", "process", "vote", "guide"], response: "ELECTION PROCESS: 1) Voter Registration (Form 6). 2) Verification of Name in Electoral Roll. 3) Finding Polling Booth. 4) Identity Verification (EPIC/Aadhar) at Booth. 5) Casting vote via EVM. 6) VVPAT Verification." },
-    { keywords: ["timeline", "date", "schedule", "when"], response: "ELECTION TIMELINE: General Elections are held every 5 years. The Model Code of Conduct applies immediately upon schedule announcement. Polling usually spans 7 phases over 6 weeks. Counting occurs on a single finalized date." },
-    { keywords: ["register", "form 6", "enroll"], response: "REGISTRATION: You must be an Indian citizen, 18+ years old. Submit Form 6 online via the NVSP portal or offline at the ERO office to get your EPIC (Voter ID)." },
-    { keywords: ["epic", "voter id", "document"], response: "DOCUMENTS: The primary document is the EPIC (Voter ID). Alternatively, you can use Aadhar Card, PAN Card, Driving License, or Passport if your name is on the electoral roll." }
+    { keywords: ["step", "how", "process", "vote", "guide"], response: "ELECTION PROCESS (STEP-BY-STEP):\n\nStep 1: REGISTRATION - File Form 6 to enroll in the Electoral Roll.\nStep 2: VERIFICATION - Check your name on the official NVSP portal.\nStep 3: BOOTH LOCATOR - Identify your designated polling station.\nStep 4: IDENTITY CHECK - Present EPIC (Voter ID) to the Polling Officer.\nStep 5: CAST VOTE - Press the blue button on the EVM next to your candidate.\nStep 6: VVPAT AUDIT - Verify your printed slip for 7 seconds through the glass." },
+    { keywords: ["timeline", "date", "schedule", "when", "phases"], response: "ELECTION TIMELINE & SCHEDULE:\n\n• PHASE 1: Notification & Enforcement of Model Code of Conduct (MCC).\n• PHASE 2: Filing of Nominations by Candidates.\n• PHASE 3: Scrutiny & Withdrawal of Nominations.\n• PHASE 4: Campaign Period (Ends 48 hours before polling).\n• PHASE 5: Polling Day(s) (Multi-phase for national security).\n• PHASE 6: Counting Day & Declaration of Results." },
+    { keywords: ["register", "form 6", "enroll"], response: "VOTER REGISTRATION PROTOCOL:\n\nCitizens aged 18+ must submit Form 6. You can do this online via the Election Commission portal or offline at the Electoral Registration Officer (ERO). Ensure you have valid Proof of Age and Proof of Residence." },
+    { keywords: ["epic", "voter id", "document"], response: "AUTHORIZED IDENTITY DOCUMENTS:\n\n1. EPIC (Voter ID Card) - Primary.\n2. Aadhar Card.\n3. PAN Card.\n4. Driving License.\n5. Indian Passport.\n*Note: Your name MUST be on the Electoral Roll regardless of the document presented." }
   ],
   CONSTITUTION: [
     { keywords: ["324", "commission", "control"], response: "Article 324 vests the superintendence, direction, and control of elections in the Election Commission." },
