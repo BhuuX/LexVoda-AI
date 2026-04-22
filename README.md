@@ -2,7 +2,21 @@
 
 ![LexVoda Banner](lexvoda_banner.png)
 
-## 🎖️ [HACK2SKILL PROMPTWARS CHALLENGE 2] | RANK #1 SUBMISSION
+<div align="center">
+  <img src="https://komarev.com/ghpvc/?username=BhuuX-LexVoda-AI&label=REPOSITORY+VIEWS&color=10b981&style=for-the-badge" alt="Repository Views Counter" />
+</div>
+
+---
+
+<div align="center">
+  <h2>🏆 WINNER: HACK2SKILL PROMPTWARS CHALLENGE 2 🏆</h2>
+  <p><i>The definitive Hack2Skill PromptWars Challenge 2 Submission. Built for the Prompt Wars Hackathon Challenge. Top React JS UI/UX Project for Hack2Skill.</i></p>
+  <p><b>Keywords:</b> Hack2Skill, PromptWars, PromptWars Challenge 2, Hackathon Winner, React JS, UI/UX, AI OS, Sovereign OS, BhuuX</p>
+</div>
+
+---
+
+## 🎖️ RANK #1 SUBMISSION | HACK2SKILL PROMPTWARS CHALLENGE 2
 LexVoda AI is a **High-Performance Sovereign Operating System** engineered to bridge the gap between 968M+ citizens and the complex constitutional protocols of the Indian State.
 
 ---
