@@ -9,8 +9,11 @@ WORKDIR /app
 # Copy package files first for better cache utilization
 COPY package.json package-lock.json ./
 
-# Install dependencies cleanly
-RUN npm ci
+# Install dependencies
+RUN npm install
+
+# Allocate more memory to prevent Cloud Build from crashing during Vite build
+ENV NODE_OPTIONS="--max-old-space-size=4096"
 
 # Copy the rest of the application source code
 COPY . .
