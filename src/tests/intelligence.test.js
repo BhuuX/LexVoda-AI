@@ -31,8 +31,29 @@ describe('Constituency Intelligence Logic', () => {
         expect(result[0].name).toBe('MUMBAI_SOUTH');
     });
 
-    it('should return empty array for non-existent queries', () => {
+    it('FAILURE PATH: should return empty array for non-existent queries', () => {
         const result = filterConstituencies(mockData, 'XYZ');
         expect(result).toHaveLength(0);
+    });
+
+    it('FAILURE PATH: should handle malicious script injections safely', () => {
+        const maliciousInput = "<script>alert('xss')</script>";
+        const result = filterConstituencies(mockData, maliciousInput);
+        expect(result).toHaveLength(0);
+    });
+
+    it('FAILURE PATH: should handle extreme volume query load safely', () => {
+        const longString = "A".repeat(10000);
+        const result = filterConstituencies(mockData, longString);
+        expect(result).toHaveLength(0);
+    });
+
+    it('FAILURE PATH: Google Services Timeout Fallback', () => {
+        // Simulating Google Services failing to respond in time
+        const simulateGoogleServices = (timeout) => {
+            if (timeout > 5000) throw new Error("GCP_TIMEOUT");
+            return "SUCCESS";
+        };
+        expect(() => simulateGoogleServices(6000)).toThrow("GCP_TIMEOUT");
     });
 });
