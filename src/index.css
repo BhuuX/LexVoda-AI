@@ -248,6 +248,22 @@ html {
   margin-top: 2rem;
 }
 
+/* ─── DESKTOP GRID ARCHITECTURE ─── */
+.protocol-grid {
+  display: grid;
+  grid-template-columns: 350px 1fr;
+  gap: 30px;
+  height: calc(100vh - var(--header-height) - 180px);
+  min-height: 650px;
+}
+
+.intel-layout {
+  display: grid;
+  grid-template-columns: 350px 1fr;
+  gap: 30px;
+  height: 650px;
+}
+
 /* ─── MOBILE RESPONSIVENESS ─── */
 @media (max-width: 1024px) {
   .app-shell {
