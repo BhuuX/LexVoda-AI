@@ -2,40 +2,60 @@
   "constituencies": [
     {
       "id": "DL-01",
-      "name": "Chandni Chowk",
-      "voterCount": 1560000,
+      "name": "CHANDNI_CHOWK",
+      "state": "DELHI",
+      "voterCount": 1562917,
       "lastTurnout": "62.7%",
+      "pollingStations": 1591,
+      "genderRatio": 812,
+      "coordinates": { "lat": "28.6506", "long": "77.2300" },
+      "metrics": {
+        "youth_density": "34%",
+        "literacy_rate": "86.3%",
+        "booth_readiness": "100%"
+      },
       "candidates": [
-        { "name": "Candidate Alpha", "party": "Party A", "age": 45, "education": "PhD Law", "cases": 0 },
-        { "name": "Candidate Beta", "party": "Party B", "age": 52, "education": "MA Economics", "cases": 1 }
+        { "name": "CANDIDATE_SEC_1", "party": "MAJORITY_GROUP_A", "cases": 0, "education": "PHD_POL_SCI" },
+        { "name": "CANDIDATE_SEC_2", "party": "OPPOSITION_B", "cases": 1, "education": "LLB_RETIRED" }
       ]
     },
     {
-      "id": "MH-48",
-      "name": "Mumbai North",
-      "voterCount": 1820000,
-      "lastTurnout": "55.4%",
+      "id": "MH-26",
+      "name": "MUMBAI_NORTH",
+      "state": "MAHARASHTRA",
+      "voterCount": 1627000,
+      "lastTurnout": "60.1%",
+      "pollingStations": 1680,
+      "genderRatio": 894,
+      "coordinates": { "lat": "19.2288", "long": "72.8541" },
+      "metrics": {
+        "youth_density": "28%",
+        "literacy_rate": "89.2%",
+        "booth_readiness": "98.8%"
+      },
       "candidates": [
-        { "name": "Candidate Gamma", "party": "Party C", "age": 38, "education": "B.Tech IT", "cases": 0 }
+        { "name": "CANDIDATE_SEC_X", "party": "REGIONAL_ALLIANCE", "cases": 2, "education": "ENGINEER" },
+        { "name": "CANDIDATE_SEC_Y", "party": "NATIONAL_CONSENSUS", "cases": 0, "education": "MBA" }
       ]
-    }
-  ],
-  "articles": [
-    {
-      "id": "324",
-      "title": "Superintendence of EC",
-      "clause": "Vesting the control of elections in an Election Commission.",
-      "relevance": "Fundamental to Free & Fair Elections"
     },
     {
-      "id": "326",
-      "title": "Adult Suffrage",
-      "clause": "Every citizen 18+ has the right to vote regardless of caste or creed.",
-      "relevance": "Voter Rights"
+      "id": "KA-25",
+      "name": "BANGALORE_CENTRAL",
+      "state": "KARNATAKA",
+      "voterCount": 2100000,
+      "lastTurnout": "54.3%",
+      "pollingStations": 1940,
+      "genderRatio": 948,
+      "coordinates": { "lat": "12.9716", "long": "77.5946" },
+      "metrics": {
+        "youth_density": "42%",
+        "literacy_rate": "91.5%",
+        "booth_readiness": "100%"
+      },
+      "candidates": [
+        { "name": "CANDIDATE_TECH_A", "party": "INFRA_INITIATIVE", "cases": 0, "education": "MA_ECONOMICS" },
+        { "name": "CANDIDATE_TECH_B", "party": "SOCIAL_UNION", "cases": 0, "education": "PROFESSOR" }
+      ]
     }
-  ],
-  "mcc_rules": [
-    { "rule": "Polling Silence", "duration": "48 Hours", "scope": "Public meetings and rallies" },
-    { "rule": "Anti-Corruption", "scope": "Bribery and intimidation of voters" }
   ]
 }
