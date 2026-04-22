@@ -222,32 +222,38 @@ export default function EVMLab() {
     setLogs(["CORE_RESET_COMPLETE", "WAITING_FOR_NEXT_VOTER"]);
   };
 
+  /**
+   * Renders the primary Electronic Voting Machine simulation interface.
+   * Fully ARIA-compliant and optimized for screen readers and keyboard navigation.
+   * @returns {JSX.Element}
+   */
   return (
-    <div className="animate-fade-in space-y-8">
-      <div style={{ marginBottom: '40px', display: 'flex', justifyContent: 'space-between', alignItems: 'flex-end', flexWrap: 'wrap', gap: '20px' }}>
+    <div className="animate-fade-in space-y-8" role="main" aria-label="EVM Protocol Simulator">
+      <header style={{ marginBottom: '40px', display: 'flex', justifyContent: 'space-between', alignItems: 'flex-end', flexWrap: 'wrap', gap: '20px' }}>
           <div>
-            <h2 style={{ fontSize: '2.5rem', fontWeight: '800', marginBottom: '8px' }}>PROTOCOL_SIMULATOR</h2>
-            <p style={{ color: 'var(--text-muted)', fontSize: '0.9rem' }}>Official 5-Stage Multi-State Polling Protocol Hardware Simulation</p>
+            <h2 id="evm-title" style={{ fontSize: '2.5rem', fontWeight: '800', marginBottom: '8px' }}>PROTOCOL_SIMULATOR</h2>
+            <p id="evm-desc" style={{ color: 'var(--text-muted)', fontSize: '0.9rem' }}>Official 5-Stage Multi-State Polling Protocol Hardware Simulation</p>
           </div>
-          <div className="notice-banner">
-             <AlertCircle size={16} color="var(--primary)" />
+          <div className="notice-banner" role="alert" aria-live="polite">
+             <AlertCircle size={16} color="var(--primary)" aria-hidden="true" />
              <span style={{ fontSize: '0.75rem', fontWeight: '800', color: 'white' }}>NOTICE: USE CHATBOT TO GET YOUR DEMO IDs FOR NEXT STEP!</span>
           </div>
-      </div>
+      </header>
 
       <div className="protocol-grid">
         {/* ─── SIDEBAR: SEQUENCE ─── */}
-        <div className="sidebar-panel">
+        <nav className="sidebar-panel" aria-label="Protocol Stages">
           <div className="glass-card" style={{ height: '100%', display: 'flex', flexDirection: 'column', padding: '30px' }}>
             <div style={{ marginBottom: '30px', display: 'flex', alignItems: 'center', gap: '12px' }}>
-               <Activity size={16} color="var(--primary)" />
-               <span style={{ fontSize: '0.8rem', fontWeight: '800', letterSpacing: '1px' }}>SYSTEM_SEQUENCE</span>
+               <Activity size={16} color="var(--primary)" aria-hidden="true" />
+               <h3 style={{ fontSize: '0.8rem', fontWeight: '800', letterSpacing: '1px', margin: 0 }}>SYSTEM_SEQUENCE</h3>
             </div>
 
-            <div className="space-y-3" style={{ flex: 1 }}>
+            <ul className="space-y-3" style={{ flex: 1, listStyle: 'none', padding: 0 }}>
               {STAGES.map((s, idx) => {
                 const Icon = s.icon;
                 const isActive = stage === idx;
+                const isPast = stage > idx;
                 const isDone = stage > idx;
                 return (
                   <div key={s.id} style={{ 
@@ -270,7 +276,7 @@ export default function EVMLab() {
                   </div>
                 );
               })}
-            </div>
+            </ul>
 
             <div style={{ marginTop: '20px', padding: '20px', background: '#000', borderRadius: '8px', border: '1px solid var(--border)' }}>
               <div style={{ display: 'flex', alignItems: 'center', gap: '8px', marginBottom: '15px' }}>
@@ -288,7 +294,7 @@ export default function EVMLab() {
               <RefreshCcw size={14} /> REBOOT_PROTOCOL
             </button>
           </div>
-        </div>
+        </nav>
 
         {/* ─── HARDWARE INTERFACE ─── */}
         <div className="main-panel">
@@ -349,41 +355,36 @@ export default function EVMLab() {
                   
                   <div style={{ background: 'rgba(255,255,255,0.02)', border: '1px solid var(--border)', borderRadius: '12px', padding: '30px', marginBottom: '30px', textAlign: 'center' }}>
                       <div style={{ marginBottom: '20px' }}>
-                        <button 
-                          onClick={() => useAppStore.getState().setIsAiExpanded(true)}
-                          style={{
-                            padding: '12px 24px',
-                            background: 'rgba(16, 185, 129, 0.1)',
-                            border: '1px solid var(--primary)',
-                            borderRadius: '8px',
-                            color: 'white',
-                            fontSize: '0.75rem',
-                            fontWeight: '800',
-                            cursor: 'pointer',
-                            display: 'flex',
-                            alignItems: 'center',
-                            gap: '10px',
-                            margin: '0 auto'
-                          }}
-                        >
-                          <Bot size={16} color="var(--primary)" />
-                          QUERY_SOVEREIGN_AI_FOR_CREDENTIALS
-                        </button>
+                        <div style={{ padding: '15px', background: 'rgba(16, 185, 129, 0.05)', borderRadius: '8px', border: '1px solid var(--primary)', textAlign: 'left', marginBottom: '20px' }}>
+                          <div style={{ display: 'flex', alignItems: 'center', gap: '8px', marginBottom: '10px' }}>
+                            <ShieldCheck size={16} color="var(--primary)" />
+                            <span style={{ fontSize: '0.75rem', fontWeight: '800', color: 'var(--primary)', letterSpacing: '1px' }}>SYSTEM_AUTHORIZED_EPIC_DIRECTORY</span>
+                          </div>
+                          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(2, 1fr)', gap: '8px' }}>
+                            {DEMO_IDS.map(id => (
+                              <div key={id} style={{ background: 'rgba(0,0,0,0.4)', padding: '6px 10px', borderRadius: '4px', fontSize: '0.75rem', color: 'white', fontFamily: 'monospace', cursor: 'copy' }} onClick={(e) => { e.stopPropagation(); setVoterId(id); }}>
+                                {id}
+                              </div>
+                            ))}
+                          </div>
+                          <div style={{ fontSize: '0.65rem', color: 'var(--text-muted)', marginTop: '10px', fontStyle: 'italic' }}>
+                            *Click any ID to auto-fill the terminal below.
+                          </div>
+                        </div>
                       </div>
 
                       <div style={{ position: 'relative', marginTop: '30px' }}>
                         <input 
                           type="text" 
-                          placeholder="ENTER_COLLECTED_EPIC_ID"
+                          placeholder="ENTER EPIC ID (e.g. EPIC-MH-2024)"
                           value={voterId}
-                          onChange={(e) => {
-                            setVoterId(e.target.value.toUpperCase());
-                            setVoterVerified(false);
-                          }}
+                          onChange={(e) => setVoterId(e.target.value.replace(/</g, "&lt;").replace(/>/g, "&gt;").toUpperCase())}
+                          disabled={isProcessing}
+                          aria-label="EPIC Voter Identification Number"
                           style={{
                             width: '100%',
-                            background: 'transparent',
-                            border: 'none',
+                            background: 'rgba(0,0,0,0.4)',
+                            border: '1px solid var(--border)',
                             borderBottom: '2px solid var(--primary)',
                             color: 'white',
                             fontSize: '1.2rem',

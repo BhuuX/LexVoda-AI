@@ -15,15 +15,16 @@ export default function LexIntelligence() {
   );
 
   return (
-    <div className="animate-fade-in space-y-8">
+    <div className="animate-fade-in space-y-8" role="main" aria-label="LexIntelligence Core Dashboard">
       {/* ─── INTELLIGENCE SEARCH ─── */}
-      <div className="glass-card" style={{ padding: '20px 40px', display: 'flex', alignItems: 'center', gap: '20px' }}>
-        <Search size={20} color="var(--primary)" />
+      <div className="glass-card" style={{ padding: '20px 40px', display: 'flex', alignItems: 'center', gap: '20px' }} role="search">
+        <Search size={20} color="var(--primary)" aria-hidden="true" />
         <input 
           type="text" 
           placeholder="Search by Constituency, State, or ID (e.g. KERALA, VARANASI, KL-04)..."
           value={searchTerm}
           onChange={(e) => setSearchTerm(e.target.value)}
+          aria-label="Search constituencies"
           style={{ 
             background: 'transparent', 
             border: 'none', 
